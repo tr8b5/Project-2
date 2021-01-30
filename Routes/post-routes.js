@@ -8,8 +8,8 @@ module.exports = function(app) {
     //  A route for all the posts
     app.get("/api/posts", function(req, res) {
         var query = {};
-        if (req.query.clubSocial_db) {
-          query.clubSocial_db = req.query.clubSocial_db;
+        if (req.query.clubSocial_id) {
+          query.clubSocialID = req.query.clubSocial_id;
         
         }
 
