@@ -23,6 +23,20 @@ db.Post.findAll({
 });
 
 
+app.get("/api/posts/:id", function(req, res) {
+    
+    db.Post.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.clubSocial
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
+
+
 
 
 
