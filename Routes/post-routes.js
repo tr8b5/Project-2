@@ -47,9 +47,24 @@ app.get("/api/posts/:id", function(req, res) {
 
 
 
+app.put("/api/posts", function(req, res) {
+    db.Post.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+};
 
 
 
 
 
-}
+
+
+
+
