@@ -29,7 +29,17 @@ app.get("/api/posts/:id", function(req, res) {
       where: {
         id: req.params.id
       },
-      include: [db.clubSocial
+      include: [db.clubSocial]
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
+  app.delete("/api/posts/:id", function(req, res) {
+    db.Post.destroy({
+      where: {
+        id: req.params.id
+      }
     }).then(function(dbPost) {
       res.json(dbPost);
     });
