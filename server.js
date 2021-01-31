@@ -1,46 +1,73 @@
+//Require express
 const express = require("express");
-const exphbs = require("express-handlebars");
-const handlebars = require("handlebars");
-const {
-  allowInsecurePrototypeAccess,
-} = require("@handlebars/allow-prototype-access");
-const app = express();
-const db = require("./models");
-const TrainsController = require("./controllers/trainsController");
 
+//Create an instance of express
+const app = express();
+
+//Create a PORT
 const PORT = process.env.PORT || 8080;
 
+//Require models
+const db = require("./models");
+
+//Add middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main",
-    handlebars: allowInsecurePrototypeAccess(handlebars),
-  })
-);
-app.set("view engine", "handlebars");
-
-app.get("/", (req, res) => {
-  res.render("index");
-});
-
-app.get("/api/config", (req, res) => {
-  res.json({
-    success: true,
+//Require API routes
+app.get("/api/posts", (req, res) => {
+  db.Post.findAll().then((allPosts) => {
+    console.log(allPosts);
+    res.json(allPosts);
   });
 });
 
-app.use(TrainsController);
-
-db.sequelize
-  .sync()
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server is running on http://localhost:${PORT}`);
-    });
-  })
-  .catch((err) => {
-    console.log(err);
+app.get("/api/posts/:id", (req, res) => {
+  db.Post.findOne({ where: { id: req.params.id } }).then((foundPost) => {
+    console.log(foundPost);
+    res.json(foundPost);
   });
+});
+
+app.post("/api/posts", (req, res) => {
+  db.Post.create({
+    school: req.body.school,
+    subject: req.body.subject,
+    post: req.body.post,
+    votes: req.body.votes,
+  }).then((newPost) => {
+    console.log(newPost);
+    res.json(newPost);
+  });
+});
+
+app.put("/api/posts/:id", (req, res) => {
+  db.Post.update({
+    school: req.body.school,
+    subject: req.body.subject,
+    post: req.body.post,
+    votes: req.body.votes,
+  }).then((updatedPost) => {
+    console.log(updatedPost);
+    res.json(updatedPost);
+  });
+});
+
+app.delete("/api/posts/:id", (req, res) => {
+  db.Post.destroy({
+    where: {
+      id: req.params.id,
+    },
+  }).then(() => {
+    console.log("Post deleted.");
+    res.end();
+  });
+});
+
+//Require Views routes
+const viewsRoutes = require("./");
+
+//Listen on the PORT
+app.listen(PORT, function () {
+  console.log(`App listening on PORT: http://localhost:${PORT}`);
+});
