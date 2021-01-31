@@ -1,9 +1,12 @@
 // This helps us so we can use other routes.
 var path = require("path");
 
-
-
 module.exports = function (app) {
+  // Homepage route
+  app.get("/", function (req, res) {
+    res.render("index");
+  });
+
   //  A route for all the posts
   app.get("/api/posts", function (req, res) {
     var query = {};
@@ -39,7 +42,7 @@ module.exports = function (app) {
       res.json(dbPost);
     });
   });
-// made a way to update routes
+  // made a way to update routes
   app.put("/api/posts", function (req, res) {
     db.Post.update(req.body, {
       where: {
