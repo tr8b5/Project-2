@@ -1,6 +1,23 @@
+<style href="../../assets/css/style.css">
+  .navbar-item {
+  margin-right: 50px;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.logo {
+  font-family: komu-a, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+}
+.navbar {
+  background-color: rgb(49, 49, 49);
+  padding-top: 5px;
+}
+</style>
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="./">
+    <a class="navbar-item logo" href="./">
       CLUB SOCIAL
     </a>
 
@@ -13,15 +30,9 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item">
-        Home
-      </a>
+     
 
-      <a class="navbar-item">
-        Documentation
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
+      {{!-- <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
           More
         </a>
@@ -41,18 +52,17 @@
             Report an issue
           </a>
         </div>
-      </div>
-    </div>
+      </div> --}}
+    </div> 
 
     <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            Log in
-          </a>
+      <a class="navbar-item">
+        Colleges
+      </a>
+
+      <a class="navbar-item">
+        About
+      </a>
         </div>
       </div>
     </div>
