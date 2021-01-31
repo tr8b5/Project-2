@@ -14,11 +14,11 @@ const db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//Require controllers
-const postController = require("./controllers/postController");
+// Set Handlebars.
+var exphbs = require("express-handlebars");
 
-//Use controllers
-app.use(postController);
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 //Listen on the PORT
 db.sequelize.sync({ force: false }).then(() => {
