@@ -7,11 +7,23 @@ const app = express();
 //Create a PORT
 const PORT = process.env.PORT || 8080;
 
+//Require models
+const db = require("./models");
+
 //Add middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//Require controllers
+const postController = require("./controllers/postController");
+
+//Use controllers
+app.use(postController);
+
+//Require Views routes
+const viewsRoutes = require("./");
+
 //Listen on the PORT
-app.listen(PORT, function () {
-  console.log(`App listening on PORT: http://localhost:${PORT}`);
+db.sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 });
