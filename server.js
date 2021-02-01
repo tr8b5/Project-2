@@ -25,8 +25,6 @@ const viewsRoutes = require("./");
 
 var routes = require("./routes/post-routes.js")(app);
 
-
-
 //Listen on the PORT
 db.sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));

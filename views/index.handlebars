@@ -28,11 +28,19 @@
   .title {
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
+
+  .school-post-title {
+    color: white;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
 </style>
 
 {{!-- Navbar --}}
 
 <nav class="navbar has-background-black-bis" role="navigation" aria-label="main navigation">
+
+
   <div class="navbar-brand">
     <a class="navbar-item logo" href="./">
       CLUB SOCIAL
@@ -64,11 +72,14 @@
   </div>
 </nav>
 
-{{!-- Column 1 --}}
+{{!-- Section --}}
 
 <section class="section">
   <div class="container">
     <div class="columns">
+
+      {{!-- Column 1 --}}
+
       <div class="column is-3 is-white ">
 
         {{!-- Feed Settings --}}
@@ -120,43 +131,79 @@
 
       {{!-- Column 2 --}}
 
-      <div class="column is-9">
+      <div class="column is-7">
 
-        {{!-- Title --}}
+        {{!-- Message --}}
 
         <div class="column is-12">
 
-        <h1 class="title has-text-white has-text-centered is-size-6">Welcome to club social! We are an anonymous chat
-          for colleges and Universities.</h1>
+          {{!-- Title --}}
 
-        <input class="input is-small" type="text" placeholder="Text input">
+          <h1 class="title has-text-white has-text-centered is-size-6">Welcome to club social! We are an anonymous chat
+            for colleges and Universities.</h1>
 
-        <textarea class="textarea is-small radius-rounded" placeholder="e.g. Hello world"></textarea>
+          {{!-- Input Section --}}
 
-        <div class="field is-right">
-          <div class="control">
-            <button class="button is-link">Select School</button>
+          <input class="input is-small" type="text" placeholder="Text input">
+
+          <textarea class="textarea is-small radius-rounded" placeholder="e.g. Hello world"></textarea>
+
+          <div class="field is-right">
+            <div class="control">
+              <button class="button is-link">Select School</button>
+            </div>
+          </div>
+
+          <div class="field is-right">
+            <div class="control">
+              <button class="button is-link">Select Subject</button>
+            </div>
+          </div>
+
+          <div class="field is-right">
+            <div class="control">
+              <button class="button is-link">Delete</button>
+            </div>
+          </div>
+
+          <div class="field is-right">
+            <div class="control">
+              <button class="button is-link">Create Post</button>
+            </div>
           </div>
         </div>
 
-        <div class="field is-right">
-          <div class="control">
-            <button class="button is-link">Select Subject</button>
+        {{!-- Post --}}
+
+        <div class="column is-12">
+
+          {{!-- Post Title --}}
+
+          <div class="block">
+            <div style="clear: both">
+              <h2 style="float: left" class="school-post-title has-text-lelt pl-6">School{{School}}</h2>
+              <h3 style="float: right" class="school-post-title has-text-right pr-6">Subject{{Subject}}</h3>
+            </div>
           </div>
+
+          {{!-- Post Message --}}
+
+          <textarea class="textarea" placeholder="Disabled textarea" disabled></textarea>
+
+          {{!-- Delete Post --}}
+
+          <div class="field is-right">
+            <div class="control">
+              <button class="button is-link">Delete</button>
+            </div>
+          </div>
+
+          {{!-- Like Button --}}
+
+          <img src="../assets/images/thumbs_up.png" href="./">
+
         </div>
 
-        <div class="field is-right">
-          <div class="control">
-            <button class="button is-link">Delete</button>
-          </div>
-        </div>
-
-        <div class="field is-right">
-          <div class="control">
-            <button class="button is-link">Create Post</button>
-          </div>
-        </div>
-        </div>
       </div>
     </div>
 </section>
