@@ -32,7 +32,7 @@
   .school-post-title {
     color: white;
     font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: komu-a, sans-serif;
   }
 </style>
 
@@ -78,7 +78,7 @@
   <div class="container">
     <div class="columns">
 
-      {{!-- Column 1 --}}
+      {{!-- Food Settings Column 1 --}}
 
       <div class="column is-3 is-white ">
 
@@ -131,9 +131,9 @@
 
       {{!-- Column 2 --}}
 
-      <div class="column is-7">
+      <div class="column is-8">
 
-        {{!-- Message --}}
+        {{!-- Make Post --}}
 
         <div class="column is-12">
 
@@ -144,36 +144,62 @@
 
           {{!-- Input Section --}}
 
-          <input class="input is-small" type="text" placeholder="Text input">
+          <input class="input is-small subject-input" type="text" placeholder="Text input">
 
-          <textarea class="textarea is-small radius-rounded" placeholder="e.g. Hello world"></textarea>
+          <textarea class="textarea is-small radius-rounded message-input" placeholder="e.g. Hello world"></textarea>
 
-          <div class="field is-right">
-            <div class="control">
-              <button class="button is-link">Select School</button>
+          {{!-- Select School --}}
+          
+          <div class="column">
+            <div class="field">
+              <div class="control">
+                <div class="select">
+                  <select>
+                    <option class="has-text-white">Select School</option>
+                    <option>{{school}}</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="field is-right">
-            <div class="control">
-              <button class="button is-link">Select Subject</button>
+          {{!-- Select Subject --}}
+
+          <div class="column">
+            <div class="field">
+              <div class="control">
+                <div class="select">
+                  <select>
+                    <option class="has-text-white">Select a subject</option>
+                    <option>{{subject}}</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="field is-right">
-            <div class="control">
-              <button class="button is-link">Delete</button>
+          {{!-- Delete --}}
+
+          <div class="column">
+            <div class="field is-right">
+              <div class="control">
+                <button class="button is-link">Delete</button>
+              </div>
             </div>
           </div>
 
-          <div class="field is-right">
-            <div class="control">
-              <button class="button is-link">Create Post</button>
+          {{!-- Create Post --}}
+
+          <div class="column">
+            <div class="field is-right">
+              <div class="control">
+                <button class="button is-link">Create Post</button>
+              </div>
             </div>
           </div>
         </div>
 
-        {{!-- Post --}}
+        {{!-- View Post--}}
 
         <div class="column is-12">
 
@@ -181,26 +207,87 @@
 
           <div class="block">
             <div style="clear: both">
-              <h2 style="float: left" class="school-post-title has-text-lelt pl-6">School{{School}}</h2>
-              <h3 style="float: right" class="school-post-title has-text-right pr-6">Subject{{Subject}}</h3>
+              <h1 style="float: left" class="school-post-title has-text-lelt pl-6 is-size-3">School{{School}}</h1>
+              <h1 style="float: right" class="school-post-title has-text-right pr-6 is-size-3">Subject{{Subject}}</h1>
             </div>
           </div>
 
           {{!-- Post Message --}}
 
-          <textarea class="textarea" placeholder="Disabled textarea" disabled></textarea>
+          <textarea class="textarea" placeholder="" disabled>Message{{message}}</textarea>
 
           {{!-- Delete Post --}}
 
           <div class="field is-right">
-            <div class="control">
+            <div class="control delete-btn">
               <button class="button is-link">Delete</button>
             </div>
           </div>
 
           {{!-- Like Button --}}
 
-          <img src="../assets/images/thumbs_up.png" href="./">
+          <i class="far fa-thumbs-up is-right"></i>
+          <i class="far fa-thumbs-down is-right"></i>
+
+        </div>
+
+        <div class="column is-12">
+
+          {{!-- Post Title --}}
+
+          <div class="block">
+            <div style="clear: both">
+              <h1 style="float: left" class="school-post-title has-text-lelt pl-6 is-size-3">School{{School}}</h1>
+              <h1 style="float: right" class="school-post-title has-text-right pr-6 is-size-3">Subject{{Subject}}</h1>
+            </div>
+          </div>
+
+          {{!-- Post Message --}}
+
+          <textarea class="textarea" placeholder="" disabled>Message{{message}}</textarea>
+
+          {{!-- Delete Post --}}
+
+          <div class="field is-right">
+            <div class="control delete-btn">
+              <button class="button is-link">Delete</button>
+            </div>
+          </div>
+
+          {{!-- Like Button --}}
+
+          <i class="far fa-thumbs-up is-right"></i>
+          <i class="far fa-thumbs-down is-right"></i>
+
+        </div>
+
+        <div class="column is-12">
+
+          {{!-- Post Title --}}
+
+          <div class="block">
+            <div style="clear: both">
+              <h1 style="float: left" class="school-post-title has-text-lelt pl-6 is-size-3">School{{School}}</h1>
+              <h1 style="float: right" class="school-post-title has-text-right pr-6 is-size-3">Subject{{Subject}}</h1>
+            </div>
+          </div>
+
+          {{!-- Post Message --}}
+
+          <textarea class="textarea" placeholder="" disabled>Message{{message}}</textarea>
+
+          {{!-- Delete Post --}}
+
+          <div class="field is-right">
+            <div class="control delete-btn">
+              <button class="button is-link">Delete</button>
+            </div>
+          </div>
+
+          {{!-- Like Button --}}
+
+          <i class="far fa-thumbs-up is-right"></i>
+          <i class="far fa-thumbs-down is-right"></i>
 
         </div>
 
