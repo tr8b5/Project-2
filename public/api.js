@@ -1,3 +1,5 @@
+function buildQueryURL() {
+
 var unirest = require("unirest");
 
 var req = unirest("GET", "https://universities-and-colleges.p.rapidapi.com/universities-by-id");
@@ -18,3 +20,5 @@ req.end(function (res) {
 
 	console.log(res.body);
 });
+
+}
