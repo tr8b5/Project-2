@@ -28,11 +28,19 @@
   .title {
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
+
+  .school-post-title {
+    color: white;
+    font-size: 20px;
+    font-family: komu-a, sans-serif;
+  }
 </style>
 
 {{!-- Navbar --}}
 
 <nav class="navbar has-background-black-bis" role="navigation" aria-label="main navigation">
+
+
   <div class="navbar-brand">
     <a class="navbar-item logo" href="./">
       CLUB SOCIAL
@@ -64,11 +72,14 @@
   </div>
 </nav>
 
-{{!-- Column 1 --}}
+{{!-- Section --}}
 
 <section class="section">
   <div class="container">
     <div class="columns">
+
+      {{!-- Food Settings Column 1 --}}
+
       <div class="column is-3 is-white ">
 
         {{!-- Feed Settings --}}
@@ -120,43 +131,166 @@
 
       {{!-- Column 2 --}}
 
-      <div class="column is-9">
+      <div class="column is-8">
 
-        {{!-- Title --}}
+        {{!-- Make Post --}}
 
         <div class="column is-12">
 
-        <h1 class="title has-text-white has-text-centered is-size-6">Welcome to club social! We are an anonymous chat
-          for colleges and Universities.</h1>
+          {{!-- Title --}}
 
-        <input class="input is-small" type="text" placeholder="Text input">
+          <h1 class="title has-text-white has-text-centered is-size-6">Welcome to club social! We are an anonymous chat
+            for colleges and Universities.</h1>
 
-        <textarea class="textarea is-small radius-rounded" placeholder="e.g. Hello world"></textarea>
+          {{!-- Input Section --}}
 
-        <div class="field is-right">
-          <div class="control">
-            <button class="button is-link">Select School</button>
+          <input class="input is-small subject-input" type="text" placeholder="Text input">
+
+          <textarea class="textarea is-small radius-rounded message-input" placeholder="e.g. Hello world"></textarea>
+
+          {{!-- Select School --}}
+          
+          <div class="column">
+            <div class="field">
+              <div class="control">
+                <div class="select">
+                  <select>
+                    <option class="has-text-white">Select School</option>
+                    <option>{{school}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {{!-- Select Subject --}}
+
+          <div class="column">
+            <div class="field">
+              <div class="control">
+                <div class="select">
+                  <select>
+                    <option class="has-text-white">Select a subject</option>
+                    <option>{{subject}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {{!-- Delete --}}
+
+          <div class="column">
+            <div class="field is-right">
+              <div class="control">
+                <button class="button is-link">Delete</button>
+              </div>
+            </div>
+          </div>
+
+          {{!-- Create Post --}}
+
+          <div class="column">
+            <div class="field is-right">
+              <div class="control">
+                <button class="button is-link">Create Post</button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="field is-right">
-          <div class="control">
-            <button class="button is-link">Select Subject</button>
+        {{!-- View Post--}}
+
+        <div class="column is-12">
+
+          {{!-- Post Title --}}
+
+          <div class="block">
+            <div style="clear: both">
+              <h1 style="float: left" class="school-post-title has-text-lelt pl-6 is-size-3">School{{School}}</h1>
+              <h1 style="float: right" class="school-post-title has-text-right pr-6 is-size-3">Subject{{Subject}}</h1>
+            </div>
           </div>
+
+          {{!-- Post Message --}}
+
+          <textarea class="textarea" placeholder="" disabled>Message{{message}}</textarea>
+
+          {{!-- Delete Post --}}
+
+          <div class="field is-right">
+            <div class="control delete-btn">
+              <button class="button is-link">Delete</button>
+            </div>
+          </div>
+
+          {{!-- Like Button --}}
+
+          <i class="far fa-thumbs-up is-right"></i>
+          <i class="far fa-thumbs-down is-right"></i>
+
         </div>
 
-        <div class="field is-right">
-          <div class="control">
-            <button class="button is-link">Delete</button>
+        <div class="column is-12">
+
+          {{!-- Post Title --}}
+
+          <div class="block">
+            <div style="clear: both">
+              <h1 style="float: left" class="school-post-title has-text-lelt pl-6 is-size-3">School{{School}}</h1>
+              <h1 style="float: right" class="school-post-title has-text-right pr-6 is-size-3">Subject{{Subject}}</h1>
+            </div>
           </div>
+
+          {{!-- Post Message --}}
+
+          <textarea class="textarea" placeholder="" disabled>Message{{message}}</textarea>
+
+          {{!-- Delete Post --}}
+
+          <div class="field is-right">
+            <div class="control delete-btn">
+              <button class="button is-link">Delete</button>
+            </div>
+          </div>
+
+          {{!-- Like Button --}}
+
+          <i class="far fa-thumbs-up is-right"></i>
+          <i class="far fa-thumbs-down is-right"></i>
+
         </div>
 
-        <div class="field is-right">
-          <div class="control">
-            <button class="button is-link">Create Post</button>
+        <div class="column is-12">
+
+          {{!-- Post Title --}}
+
+          <div class="block">
+            <div style="clear: both">
+              <h1 style="float: left" class="school-post-title has-text-lelt pl-6 is-size-3">School{{School}}</h1>
+              <h1 style="float: right" class="school-post-title has-text-right pr-6 is-size-3">Subject{{Subject}}</h1>
+            </div>
           </div>
+
+          {{!-- Post Message --}}
+
+          <textarea class="textarea" placeholder="" disabled>Message{{message}}</textarea>
+
+          {{!-- Delete Post --}}
+
+          <div class="field is-right">
+            <div class="control delete-btn">
+              <button class="button is-link">Delete</button>
+            </div>
+          </div>
+
+          {{!-- Like Button --}}
+
+          <i class="far fa-thumbs-up is-right"></i>
+          <i class="far fa-thumbs-down is-right"></i>
+
         </div>
-        </div>
+
       </div>
     </div>
 </section>
