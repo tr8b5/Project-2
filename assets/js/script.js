@@ -1,4 +1,4 @@
-$("setting-submit").on("click",  function() {
-  ($(this).text());
-  console.log ("submit button")
+
+$("#settings-button").on("click",  function() {
+  console.log ("submit button");
 });
