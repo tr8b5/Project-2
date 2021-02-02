@@ -15,6 +15,7 @@
   .navbar {
     background-color: rgb(49, 49, 49);
     padding-top: 5px;
+    text-align: center;
   }
 
   body {
@@ -59,7 +60,8 @@
     </div>
 
     <div class="navbar-end">
-      <a class="navbar-item">
+      <a class="navbar-item" style="background-color: rgb(62, 64, 65);">
+        <div class="field is-grouped"></div>
         Colleges
       </a>
 
@@ -67,8 +69,6 @@
         About
       </a>
     </div>
-  </div>
-  </div>
   </div>
 </nav>
 
@@ -159,45 +159,21 @@
                     <option>{{school}}</option>
                   </select>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {{!-- Select Subject --}}
-
-          <div class="column">
-            <div class="field">
-              <div class="control">
-                <div class="select">
+                {{!-- Select Subject --}}
+                  <div class="select">
                   <select>
                     <option class="has-text-white">Select a subject</option>
                     <option>{{subject}}</option>
                   </select>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {{!-- Delete --}}
-
-          <div class="column">
-            <div class="field is-right">
-              <div class="control">
-                <button class="button is-link">Delete</button>
-              </div>
-            </div>
-          </div>
-
-          {{!-- Create Post --}}
-
-          <div class="column">
-            <div class="field is-right">
-              <div class="control">
+                 {{!-- Create Post --}}
                 <button class="button is-link">Create Post</button>
-              </div>
+                {{!-- Delete --}}
+                <button class="button is-danger">Delete Post</button>                
+
+              </div>   
             </div>
-          </div>
-        </div>
+          
 
         {{!-- View Post--}}
 
