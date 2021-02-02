@@ -22,14 +22,28 @@
     </div>
 
     <div class="navbar-end">
-      <a class="navbar-item" style="background-color: rgb(62, 64, 65);">
-        <div class="field is-grouped"></div>
-        Colleges
-      </a>
-
-      <a class="navbar-item">
-        About
-      </a>
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
+              <span class="icon">
+                <i class="fas fa-school"></i>
+              </span>
+              <span>
+                Colleges
+              </span>
+            </a>
+          </p>
+          <p class="control">
+            <a class="button is-light" href="https://github.com/jgthms/bulma/releases/download/0.9.1/bulma-0.9.1.zip">
+              <span class="icon">
+                <i class="fas fa-question"></i>
+              </span>
+              <span>Info</span>
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
@@ -50,7 +64,7 @@
 
           {{!-- Title --}}
 
-          <h2 class="settings has-text-centered is-size-4">Feed Settings</h2>
+          <h2 class="settings has-text-centered is-size-3" style="font-family:monospace;">Feed Settings</h2>
 
           {{!-- School --}}
 
@@ -106,7 +120,7 @@
 
           {{!-- Title --}}
 
-          <h1 class="title has-text-white has-text-centered is-size-6">Welcome to club social! We are an anonymous chat
+          <h1 class="title has-text-white has-text-centered is-5">Welcome to club social! We are an anonymous chat
             for colleges and Universities.</h1>
 
           {{!-- Input Section --}}
@@ -167,7 +181,7 @@
 
           <div class="field is-right">
             <div class="control delete-btn">
-              <button class="button is-link">Delete</button>
+             <button class="button is-danger">Delete Post</button>  
             </div>
           </div>
 
@@ -197,7 +211,7 @@
 
           <div class="field is-right">
             <div class="control delete-btn">
-              <button class="button is-link">Delete</button>
+              <button class="button is-danger">Delete Post</button>  
             </div>
           </div>
 
@@ -227,7 +241,7 @@
 
           <div class="field is-right">
             <div class="control delete-btn">
-              <button class="button is-link">Delete</button>
+              <button class="button is-danger">Delete Post</button>  
             </div>
           </div>
 
@@ -241,6 +255,8 @@
       </div>
       
     </div>
+
+</section>
     <footer class="footer">
   <div class="content has-text-centered">
     <p>
@@ -250,4 +266,3 @@
     </p>
   </div>
 </footer>
-</section>
