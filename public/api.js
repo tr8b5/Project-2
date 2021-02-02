@@ -15,16 +15,6 @@ req.headers({
 });
 
 
-$.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response) {
-    console.log(response);
-  });
-
-  searchOMDB("Mr. Nobody");
-  searchOMDB("The Little Mermaid");
-  searchOMDB("The Lion King");
 
 req.end(function (res) {
 	if (res.error) throw new Error(res.error);
