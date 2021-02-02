@@ -128,7 +128,7 @@
 
           <input class="input is-small subject-input" type="text" placeholder="Text input">
 
-          <textarea class="textarea is-small radius-rounded message-input" placeholder="e.g. Hello world"></textarea>
+          <textarea class="textarea is-small radius-rounded message-input" placeholder="e.g. Hello world" id="post-text"></textarea>
 
           {{!-- Select School --}}
 
@@ -139,8 +139,8 @@
                   <select class="option" id="feed-school-selector">
                     <option class="has-text-white" value="" selected>Select School</option>
                     {{#each schools }}
-                  <option class="has-text-white" value="{{school}}">{{school}}</option>
-                  {{/each}}
+                    <option class="has-text-white" value="{{school}}">{{school}}</option>
+                    {{/each}}
                   </select>
                 </div>
                 {{!-- Select Subject --}}
@@ -153,7 +153,7 @@
                   </select>
                 </div>
                 {{!-- Create Post --}}
-                <button class="button is-link">Create Post</button>
+                <button class="button is-link" id="create-post">Create Post</button>
                 {{!-- Delete --}}
                 <button class="button is-danger">Delete Post</button>
 
@@ -280,6 +280,36 @@
 
       var schoolName = $("#feed-settings-school-selector").val();
       console.log(schoolName);
+
+      $.ajax({
+        queryURL: "/api/posts",
+        method: "POST",
+        data: schoolName
+      }).then(() => {
+
+      })
+
+      // Assign value to a variable
+      // Console log the value
+
+    });
+
+    $("#create-post").on("click", function () {
+      console.log("post created");
+
+      // Grab the value from the dropdown
+
+      var schoolPostName = $("#feed-school-selector").val();
+      var post = $("#post-text").val();
+      console.log(schoolPostName);
+
+      $.ajax({
+        queryURL: "/api/posts",
+        method: "POST",
+        data: schoolPostName
+      }).then(() => {
+
+      })
 
       // Assign value to a variable
       // Console log the value
