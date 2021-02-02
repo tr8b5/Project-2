@@ -15,7 +15,6 @@
   .navbar {
     background-color: rgb(49, 49, 49);
     padding-top: 5px;
-    text-align: center;
   }
 
   body {
@@ -60,8 +59,7 @@
     </div>
 
     <div class="navbar-end">
-      <a class="navbar-item" style="background-color: rgb(62, 64, 65);">
-        <div class="field is-grouped"></div>
+      <a class="navbar-item">
         Colleges
       </a>
 
@@ -69,6 +67,8 @@
         About
       </a>
     </div>
+  </div>
+  </div>
   </div>
 </nav>
 
@@ -84,7 +84,7 @@
 
         {{!-- Feed Settings --}}
 
-        <div class="box has-background-black-bis has-text-white" style=>
+        <div class="box has-background-black-bis has-text-white">
 
           {{!-- Title --}}
 
@@ -99,7 +99,7 @@
                 <select>
                   <option class="has-text-white">Select School</option>
                   {{#each schools }}
-                  <option class="has-text-white">{{school}}</option>
+                  <option>{{school}}</option>
                   {{/each}}
                 </select>
               </div>
@@ -133,7 +133,7 @@
 
       {{!-- Column 2 --}}
 
-      <div class="column is-8" style="background-color: rgb(61, 61, 61)";>
+      <div class="column is-8">
 
         {{!-- Make Post --}}
 
@@ -161,21 +161,45 @@
                     <option>{{school}}</option>
                   </select>
                 </div>
-                {{!-- Select Subject --}}
-                  <div class="select">
+              </div>
+            </div>
+          </div>
+
+          {{!-- Select Subject --}}
+
+          <div class="column">
+            <div class="field">
+              <div class="control">
+                <div class="select">
                   <select>
                     <option class="has-text-white">Select a subject</option>
                     <option>{{subject}}</option>
                   </select>
                 </div>
-                 {{!-- Create Post --}}
-                <button class="button is-link">Create Post</button>
-                {{!-- Delete --}}
-                <button class="button is-danger">Delete Post</button>                
-
-              </div>   
+              </div>
             </div>
-          
+          </div>
+
+          {{!-- Delete --}}
+
+          <div class="column">
+            <div class="field is-right">
+              <div class="control">
+                <button class="button is-link">Delete</button>
+              </div>
+            </div>
+          </div>
+
+          {{!-- Create Post --}}
+
+          <div class="column">
+            <div class="field is-right">
+              <div class="control">
+                <button class="button is-link">Create Post</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {{!-- View Post--}}
 
@@ -270,15 +294,5 @@
         </div>
 
       </div>
-      
     </div>
-    <footer class="footer">
-  <div class="content has-text-centered">
-    <p>
-      <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-    </p>
-  </div>
-</footer>
 </section>
