@@ -1,7 +1,6 @@
 module.exports = function (sequelize, DataType) {
-  const Post = sequelize.define("Post", {
-    school: DataType.STRING,
+  const School = sequelize.define("School", {
     post: DataType.STRING,
   });
-  return Post;
+  return School;
 };

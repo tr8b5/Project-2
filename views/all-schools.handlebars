@@ -1,0 +1,298 @@
+<style href="../../assets/css/style.css">
+  .navbar-item {
+    margin-right: 50px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .logo {
+    font-family: komu-a, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+  }
+
+  .navbar {
+    background-color: rgb(49, 49, 49);
+    padding-top: 5px;
+  }
+
+  body {
+    background-color: black;
+  }
+
+  .settings {
+    font-family: komu-a, sans-serif;
+  }
+
+  .title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .school-post-title {
+    color: white;
+    font-size: 20px;
+    font-family: komu-a, sans-serif;
+
+</style>
+
+{{!-- Navbar --}}
+
+<nav class="navbar has-background-black-bis" role="navigation" aria-label="main navigation">
+
+
+  <div class="navbar-brand">
+    <a class="navbar-item logo" href="./">
+      CLUB SOCIAL
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+
+    </div>
+
+    <div class="navbar-end">
+      <a class="navbar-item">
+        Colleges
+      </a>
+
+      <a class="navbar-item">
+        About
+      </a>
+    </div>
+  </div>
+  </div>
+  </div>
+</nav>
+
+{{!-- Section --}}
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+
+      {{!-- Food Settings Column 1 --}}
+
+      <div class="column is-3 is-white ">
+
+        {{!-- Feed Settings --}}
+
+        <div class="box has-background-black-bis has-text-white">
+
+          {{!-- Title --}}
+
+          <h2 class="settings has-text-centered is-size-4">Feed Settings</h2>
+
+          {{!-- School --}}
+
+          <div class="field">
+            <label class="label has-text-white">*school:</label>
+            <div class="control">
+              <div class="select">
+                <select>
+                  <option class="has-text-white">Select School</option>
+                  {{#each schools }}
+                  <option>{{school}}</option>
+                  {{/each}}
+                </select>
+              </div>
+            </div>
+          </div>
+
+          {{!-- Subject --}}
+
+          <div class="field">
+            <label class="label has-text-white">Subject:</label>
+            <div class="control">
+              <div class="select">
+                <select>
+                  <option class="has-text-white">Select a subject</option>
+                  <option>{{subject}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          {{!-- Submit --}}
+
+          <div class="field">
+            <div class="control">
+              <button class="button is-link">Submit</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {{!-- Column 2 --}}
+
+      <div class="column is-8">
+
+        {{!-- Make Post --}}
+
+        <div class="column is-12">
+
+          {{!-- Title --}}
+
+          <h1 class="title has-text-white has-text-centered is-size-6">Welcome to club social! We are an anonymous chat
+            for colleges and Universities.</h1>
+
+          {{!-- Input Section --}}
+
+          <input class="input is-small subject-input" type="text" placeholder="Text input">
+
+          <textarea class="textarea is-small radius-rounded message-input" placeholder="e.g. Hello world"></textarea>
+
+          {{!-- Select School --}}
+          
+          <div class="column">
+            <div class="field">
+              <div class="control">
+                <div class="select">
+                  <select>
+                    <option class="has-text-white">Select School</option>
+                    <option>{{school}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {{!-- Select Subject --}}
+
+          <div class="column">
+            <div class="field">
+              <div class="control">
+                <div class="select">
+                  <select>
+                    <option class="has-text-white">Select a subject</option>
+                    <option>{{subject}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {{!-- Delete --}}
+
+          <div class="column">
+            <div class="field is-right">
+              <div class="control">
+                <button class="button is-link">Delete</button>
+              </div>
+            </div>
+          </div>
+
+          {{!-- Create Post --}}
+
+          <div class="column">
+            <div class="field is-right">
+              <div class="control">
+                <button class="button is-link">Create Post</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{!-- View Post--}}
+
+        <div class="column is-12">
+
+          {{!-- Post Title --}}
+
+          <div class="block">
+            <div style="clear: both">
+              <h1 style="float: left" class="school-post-title has-text-lelt pl-6 is-size-3">School{{School}}</h1>
+              <h1 style="float: right" class="school-post-title has-text-right pr-6 is-size-3">Subject{{Subject}}</h1>
+            </div>
+          </div>
+
+          {{!-- Post Message --}}
+
+          <textarea class="textarea" placeholder="" disabled>Message{{message}}</textarea>
+
+          {{!-- Delete Post --}}
+
+          <div class="field is-right">
+            <div class="control delete-btn">
+              <button class="button is-link">Delete</button>
+            </div>
+          </div>
+
+          {{!-- Like Button --}}
+
+          <i class="far fa-thumbs-up is-right"></i>
+          <i class="far fa-thumbs-down is-right"></i>
+
+        </div>
+
+        <div class="column is-12">
+
+          {{!-- Post Title --}}
+
+          <div class="block">
+            <div style="clear: both">
+              <h1 style="float: left" class="school-post-title has-text-lelt pl-6 is-size-3">School{{School}}</h1>
+              <h1 style="float: right" class="school-post-title has-text-right pr-6 is-size-3">Subject{{Subject}}</h1>
+            </div>
+          </div>
+
+          {{!-- Post Message --}}
+
+          <textarea class="textarea" placeholder="" disabled>Message{{message}}</textarea>
+
+          {{!-- Delete Post --}}
+
+          <div class="field is-right">
+            <div class="control delete-btn">
+              <button class="button is-link">Delete</button>
+            </div>
+          </div>
+
+          {{!-- Like Button --}}
+
+          <i class="far fa-thumbs-up is-right"></i>
+          <i class="far fa-thumbs-down is-right"></i>
+
+        </div>
+
+        <div class="column is-12">
+
+          {{!-- Post Title --}}
+
+          <div class="block">
+            <div style="clear: both">
+              <h1 style="float: left" class="school-post-title has-text-lelt pl-6 is-size-3">School{{School}}</h1>
+              <h1 style="float: right" class="school-post-title has-text-right pr-6 is-size-3">Subject{{Subject}}</h1>
+            </div>
+          </div>
+
+          {{!-- Post Message --}}
+
+          <textarea class="textarea" placeholder="" disabled>Message{{message}}</textarea>
+
+          {{!-- Delete Post --}}
+
+          <div class="field is-right">
+            <div class="control delete-btn">
+              <button class="button is-link">Delete</button>
+            </div>
+          </div>
+
+          {{!-- Like Button --}}
+
+          <i class="far fa-thumbs-up is-right"></i>
+          <i class="far fa-thumbs-down is-right"></i>
+
+        </div>
+
+      </div>
+    </div>
+</section>
