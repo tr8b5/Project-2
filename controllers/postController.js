@@ -1,18 +1,21 @@
 const router = require("express").Router();
 
 //Import the model to use its database functions
-const post = require("../models/Post");
+const db = require("../models");
 
 var schools = [
   {
-    school: "Georgia Tech"
-  }, {
-    school: "LSU"
-  }, {
-    school: "FSU"
-  }, {
-    school: "Virginia Tech"
-  }
+    school: "Georgia Tech",
+  },
+  {
+    school: "LSU",
+  },
+  {
+    school: "FSU",
+  },
+  {
+    school: "Virginia Tech",
+  },
 ];
 
 //Require API routes
@@ -65,13 +68,7 @@ router.delete("/api/posts/:id", (req, res) => {
 //Require View Routes
 router.get("/", (req, res) => {
   res.render("index", {
-    schools: schools
-  });
-});
-
-router.get("/schooldata", function(req, res) {
-  res.render("all-schools", {
-    location: schools
+    schools: schools,
   });
 });
 
