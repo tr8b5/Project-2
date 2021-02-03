@@ -1,7 +1,8 @@
 const router = require("express").Router();
 
 //Import the model to use its database functions
-const post = require("../models/Post");
+
+const db = require("../models");
 
 var schools = [
   {
