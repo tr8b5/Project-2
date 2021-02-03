@@ -17,6 +17,8 @@ Ikenna Nwagbara : https://github.com/ItsJustIkenna
 Mya Todd        : https://github.com/mt428376
 Rafael Chavez   : https://github.com/Rafael-Chavez
 
+cool people
+
 ## License
 
 MIT License
