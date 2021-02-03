@@ -74,9 +74,25 @@
             <div class="control">
               <div class="select">
                 <select class="option" id="feed-settings-school-selector">
-                  <option class="has-text-black" value="" selected>Select School</option>
+                  <option class="has-text-white" value="" selected>Select School</option>
                   {{#each schools }}
                   <option class="has-text-black" value="{{school}}">{{school}}</option>
+                  {{/each}}
+                </select>
+              </div>
+            </div>
+          </div>
+
+          {{!-- Subject --}}
+
+          <div class="field">
+            <label class="label has-text-white">Subject:</label>
+            <div class="control">
+              <div class="select">
+                <select>
+                  <option class="has-text-white">Select a subject</option>
+                  {{#each subjects }}
+                  <option>{{subject}}</option>
                   {{/each}}
                 </select>
               </div>
@@ -98,12 +114,12 @@
       {{!-- Column 2 --}}
 
       <div class="column is-9" style="background-color: rgb(61, 61, 61)" ;>
-
+       
 
         {{!-- Make Post --}}
 
         <div class="column is-12">
-
+          
 
           {{!-- Title --}}
 
@@ -112,11 +128,9 @@
 
           {{!-- Input Section --}}
 
+          <input class="input is-small subject-input" type="text" placeholder="Text input">
 
-          
-
-          <textarea class="textarea is-small radius-rounded message-input" placeholder="e.g. Hello world"
-            id="post-text"></textarea>
+          <textarea class="textarea is-small radius-rounded message-input" placeholder="e.g. Hello world" id="post-text"></textarea>
 
           {{!-- Select School --}}
 
@@ -125,13 +139,21 @@
               <div class="control">
                 <div class="select">
                   <select class="option" id="feed-school-selector">
-                    <option class="has-text-black" value="" selected>Select School</option>
+                    <option class="has-text-white" value="" selected>Select School</option>
                     {{#each schools }}
-                    <option class="has-text-black" value="{{school}}">{{school}}</option>
+                    <option class="has-text-white" value="{{school}}">{{school}}</option>
                     {{/each}}
                   </select>
                 </div>
-
+                {{!-- Select Subject --}}
+                <div class="select">
+                  <select>
+                    <option class="has-text-white">Select a subject</option>
+                    {{#each subjects }}
+                    <option>{{subject}}</option>
+                    {{/each}}
+                  </select>
+                </div>
                 {{!-- Create Post --}}
                 <button class="button is-link" id="create-post">Create Post</button>
                 {{!-- Delete --}}
@@ -147,6 +169,40 @@
 
 
             {{!-- View Post--}}
+            
+            <div class="column is-12">
+
+              {{!-- Post Title --}}
+
+              <div class="block">
+                <div style="clear: both">
+                  <h1 style="float: left" class="school-post-title has-text-lelt pl-6 is-size-3">School{{School}}</h1>
+                  <h1 style="float: right" class="school-post-title has-text-right pr-6 is-size-3">Subject{{Subject}}
+                  </h1>
+                </div>
+              </div>
+
+              {{!-- Post Message --}}
+
+              <textarea class="textarea" placeholder="" disabled>Message{{message}}</textarea>
+
+              {{!-- Delete Post --}}
+
+              <div class="field is-right">
+               <button class="button is-danger">
+                  <span>Delete Post</span>
+                  <span class="icon is-small">
+                    <i class="fas fa-times"></i>
+                  </span>
+                </button>
+              </div>
+
+              {{!-- Like Button --}}
+
+              <i class="far fa-thumbs-up is-right"></i>
+              <i class="far fa-thumbs-down is-right"></i>
+
+            </div>
 
             <div class="column is-12">
 
@@ -155,7 +211,41 @@
               <div class="block">
                 <div style="clear: both">
                   <h1 style="float: left" class="school-post-title has-text-lelt pl-6 is-size-3">School{{School}}</h1>
-          
+                  <h1 style="float: right" class="school-post-title has-text-right pr-6 is-size-3">Subject{{Subject}}
+                  </h1>
+                </div>
+              </div>
+
+              {{!-- Post Message --}}
+
+              <textarea class="textarea" placeholder="" disabled>Message{{message}}</textarea>
+
+              {{!-- Delete Post --}}
+
+              <div class="field is-right">
+                <button class="button is-danger">
+                  <span>Delete Post</span>
+                  <span class="icon is-small">
+                    <i class="fas fa-times"></i>
+                  </span>
+                </button>
+              </div>
+
+              {{!-- Like Button --}}
+
+              <i class="far fa-thumbs-up is-right"></i>
+              <i class="far fa-thumbs-down is-right"></i>
+
+            </div>
+
+            <div class="column is-12">
+
+              {{!-- Post Title --}}
+
+              <div class="block">
+                <div style="clear: both">
+                  <h1 style="float: left" class="school-post-title has-text-lelt pl-6 is-size-3">School{{School}}</h1>
+                  <h1 style="float: right" class="school-post-title has-text-right pr-6 is-size-3">Subject{{Subject}}
                   </h1>
                 </div>
               </div>
@@ -190,12 +280,15 @@
 <footer class="footer" style="background-color: gray;">
   <div class="content has-text-centered">
     <p>
-      <strong>Club Social</strong> by
-    <p>William Miller, Ikenna Nwagbara, Mya Todd and Rafael Chavez
+      <strong>Club Social</strong> by <p>William Miller, Ikenna Nwagbara, Mya Todd and Rafael Chavez        
     </p>.
     <a href="https://bulma.io">
-      <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
-    </a>
+  <img
+    src="https://bulma.io/images/made-with-bulma.png"
+    alt="Made with Bulma"
+    width="128"
+    height="24">
+</a>
   </div>
 </footer>
 
@@ -229,16 +322,13 @@
       var post = $("#post-text").val();
       console.log(schoolPostName);
 
-      postObj = {
-        school: schoolPostName,
-        post: post
-      }
-
       $.ajax({
         queryURL: "/api/posts",
         method: "POST",
-        data: postObj
-      });
+        data: schoolPostName
+      }).then(() => {
+
+      })
 
       // Assign value to a variable
       // Console log the value
