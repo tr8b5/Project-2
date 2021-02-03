@@ -74,7 +74,7 @@
             <div class="control">
               <div class="select">
                 <select class="option" id="feed-settings-school-selector">
-                  <option class="has-text-white" value="" selected>Select School</option>
+                  <option class="has-text-black" value="" selected>Select School</option>
                   {{#each schools }}
                   <option class="has-text-black" value="{{school}}">{{school}}</option>
                   {{/each}}
@@ -98,12 +98,12 @@
       {{!-- Column 2 --}}
 
       <div class="column is-9" style="background-color: rgb(61, 61, 61)" ;>
-       
+
 
         {{!-- Make Post --}}
 
         <div class="column is-12">
-          
+
 
           {{!-- Title --}}
 
@@ -114,7 +114,8 @@
 
           
 
-          <textarea class="textarea is-small radius-rounded message-input" placeholder="e.g. Hello world" id="post-text"></textarea>
+          <textarea class="textarea is-small radius-rounded message-input" placeholder="e.g. Hello world"
+            id="post-text"></textarea>
 
           {{!-- Select School --}}
 
@@ -123,9 +124,18 @@
               <div class="control">
                 <div class="select">
                   <select class="option" id="feed-school-selector">
-                    <option class="has-text-white" value="" selected>Select School</option>
+                    <option class="has-text-black" value="" selected>Select School</option>
                     {{#each schools }}
-                    <option class="has-text-white" value="{{school}}">{{school}}</option>
+                    <option class="has-text-black" value="{{school}}">{{school}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+                {{!-- Select Subject --}}
+                <div class="select">
+                  <select>
+                    <option class="has-text-black">Select a subject</option>
+                    {{#each subjects }}
+                    <option>{{subject}}</option>
                     {{/each}}
                   </select>
                 </div>
@@ -144,7 +154,7 @@
 
 
             {{!-- View Post--}}
-            
+
             <div class="column is-12">
 
               {{!-- Post Title --}}
@@ -163,7 +173,7 @@
               {{!-- Delete Post --}}
 
               <div class="field is-right">
-               <button class="button is-danger">
+                <button class="button is-danger">
                   <span>Delete Post</span>
                   <span class="icon is-small">
                     <i class="fas fa-times"></i>
@@ -252,15 +262,12 @@
 <footer class="footer" style="background-color: gray;">
   <div class="content has-text-centered">
     <p>
-      <strong>Club Social</strong> by <p>William Miller, Ikenna Nwagbara, Mya Todd and Rafael Chavez        
+      <strong>Club Social</strong> by
+    <p>William Miller, Ikenna Nwagbara, Mya Todd and Rafael Chavez
     </p>.
     <a href="https://bulma.io">
-  <img
-    src="https://bulma.io/images/made-with-bulma.png"
-    alt="Made with Bulma"
-    width="128"
-    height="24">
-</a>
+      <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+    </a>
   </div>
 </footer>
 
@@ -279,6 +286,7 @@
         method: "POST",
         data: schoolName
       }).then(() => {
+        
 
       })
 
@@ -296,13 +304,16 @@
       var post = $("#post-text").val();
       console.log(schoolPostName);
 
+      postObj = {
+        school: schoolPostName,
+        post: post
+      }
+
       $.ajax({
         queryURL: "/api/posts",
         method: "POST",
-        data: schoolPostName
-      }).then(() => {
-
-      })
+        data: postObj
+      });
 
       // Assign value to a variable
       // Console log the value

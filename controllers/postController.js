@@ -3,7 +3,6 @@ const router = require("express").Router();
 //Import the model to use its database functions
 const db = require("../models");
 
-var db = require("../models");
 
 var schools = [
   {
