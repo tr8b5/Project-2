@@ -20,9 +20,11 @@
   },
   "homepage": "https://github.com/tr8b5/Project-2#readme",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
     "bulma": "^0.9.2",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
+    "handlebars": "^4.7.6",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.7",

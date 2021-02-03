@@ -1,5 +1,10 @@
+
 //Require express
 const express = require("express");
+const handlebars = require("handlebars");
+const {
+  allowInsecurePrototypeAccess,
+} = require("@handlebars/allow-prototype-access");
 
 //Create an instance of express
 const app = express();
@@ -26,7 +31,7 @@ const routes = require("./controllers/postController");
 app.use(routes);
 
 //Listen on the PORT
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>
     console.log(`Listening on PORT http://localhost:${PORT}`)
   );
