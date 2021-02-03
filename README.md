@@ -6,3 +6,5 @@ Club Social is an anonymous social media platform where users can post about the
 Club Social helps keep everything anonymous and provides a plethora of categories in which other users can take input and use to help them choose a college or be wary about some down sides.
 
 On the flip side, Club Social also helps with providing the good as well that can help steer users into preferring one school over the other.
+
+## Credits
