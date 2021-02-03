@@ -3,6 +3,8 @@ const router = require("express").Router();
 //Import the model to use its database functions
 const db = require("../models");
 
+var db = require("../models");
+
 var schools = [
   {
     school: "Georgia Tech",
@@ -17,6 +19,8 @@ var schools = [
     school: "Virginia Tech",
   },
 ];
+
+module.exports = function(app) {
 
 //Require API routes
 router.get("/api/posts", (req, res) => {
@@ -72,4 +76,8 @@ router.get("/", (req, res) => {
   });
 });
 
-module.exports = router;
+}
+
+
+
+// module.exports = router;
