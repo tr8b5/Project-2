@@ -1,18 +1,21 @@
 const router = require("express").Router();
 
 //Import the model to use its database functions
-const post = require("../models/Post");
+const db = require("../models");
 
 var schools = [
   {
-    school: "Georgia Tech"
-  }, {
-    school: "LSU"
-  }, {
-    school: "FSU"
-  }, {
-    school: "Virginia Tech"
-  }
+    school: "Georgia Tech",
+  },
+  {
+    school: "LSU",
+  },
+  {
+    school: "FSU",
+  },
+  {
+    school: "Virginia Tech",
+  },
 ];
 
 //Require API routes
@@ -33,9 +36,7 @@ router.get("/api/posts/:id", (req, res) => {
 router.post("/api/posts", (req, res) => {
   db.Post.create({
     school: req.body.school,
-    subject: req.body.subject,
     post: req.body.post,
-    votes: req.body.votes,
   }).then((newPost) => {
     console.log(newPost);
     res.json(newPost);
@@ -64,14 +65,12 @@ router.delete("/api/posts/:id", (req, res) => {
 
 //Require View Routes
 router.get("/", (req, res) => {
-  res.render("index", {
-    schools: schools
-  });
-});
-
-router.get("/schooldata", function(req, res) {
-  res.render("all-schools", {
-    location: schools
+  db.Post.findAll().then((allPosts) => {
+    console.log(allPosts);
+    res.render("index", {
+      schools: schools,
+      posts: allPosts,
+    });
   });
 });
 
