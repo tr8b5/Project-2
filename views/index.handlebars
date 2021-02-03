@@ -249,35 +249,40 @@
       console.log("submit button");
 
       // Grab the value from the dropdown
-      var schoolName = $("#feed-settings-school-selector").val().trim();
+
+      var schoolName = $("#feed-settings-school-selector").val();
       console.log(schoolName);
 
-      var postData = {
-        name: schoolName
-      };
-
       $.ajax({
-        queryURL: "/api/posts/",
-        method: "GET",
-        data: postData
-      }).then((res) => {
-        console.log(res)
+        queryURL: "/api/posts",
+        method: "POST",
+        data: schoolName
+      }).then(() => {
+
       })
-        .catch(err => console.log(err))
+
+      // Assign value to a variable
+      // Console log the value
+
     });
 
-
     $("#create-post").on("click", function () {
-
       console.log("post created");
 
+      // Grab the value from the dropdown
+
+      var schoolPostName = $("#feed-school-selector").val();
+      var post = $("#post-text").val();
+      console.log(schoolPostName);
+
       $.ajax({
-        queryURL: "http://localhost:8080/api/posts",
+        queryURL: "/api/posts",
         method: "POST",
         data: schoolPostName
       }).then(() => {
 
       })
+
       // Assign value to a variable
       // Console log the value
 
